@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Precios</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row" id="action">
+			
+		</div>
+	</div>
+
+	<script type="text/x-handlebars-template" id="index">
+	{{#each preciosPaquete}}
+		<div class="col s6 m3">
+			<table>
+				<tr id="gris">
+					<th class="encabezadoBlanco"><h4>{{{nombrePaquete}}}</h4></th>
+				</tr>
+				<tr><td><h5>$ {{{precio}}}</h5> <br> per month</td></tr>
+				<tr><td><a class="waves-effect waves-light btn btn-verde" href="#">Sign Up</a></td></tr>
+				<tr><td>{{{espacioDisco}}}</td></tr>
+				<tr class="celdaGris"><td>{{{trafico}}}</td></tr>
+				<tr><td>{{{subdominios}}} Subdomains</td></tr>
+				<tr class="celdaGris"><td>{{{emails}}} Email Accounts</td></tr>
+				<tr><td>{{{soporteMail}}} </td></tr>
+				<tr class="celdaGris"><td>{{{soporteBd}}}</td></tr>
+				<tr><td>{{{soportePhp}}}</td>
+				<tr class="celdaGris"><td>{{{plesk}}}</td></tr>
+				<tr><td>{{{spam}}}</td></tr>
+				<tr class="celdaGris"><td>$ {{{precio}}} <br> per month</td></tr>
+				<tr><td><a class="waves-effect waves-light btn btn-verde" href="#">Sign Up</a></td></tr>
+			</table>
+		</div>
+	{{/each}}
+	</script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+	<script type="text/javascript">
+		var template = document.getElementById("index").innerHTML;
+		var compilar = Handlebars.compile(template);
+		var paquete = {
+			preciosPaquete: [
+				{
+					nombrePaquete: "Basic",
+					precio: 9,
+					espacioDisco: "100MB",
+					trafico: "200MB",
+					subdominios: 2,
+					emails: 5,
+					soporteMail: "Webmail Support",
+					soporteBd: "MySQL Support",
+					soportePhp: "<tr><td></td></tr>",
+					plesk: "<tr><td></td></tr>",
+					spam: "<tr><td></td></tr>"
+				},
+				{
+					nombrePaquete: "Corporate",
+					precio: 14,
+					espacioDisco: "300MB",
+					trafico: "400MB",
+					subdominios: 5,
+					emails: 10,
+					soporteMail: "Webmail Support",
+					soporteBd: "MySQL Support",
+					soportePhp: "PHP5 Support",
+					plesk: "<tr><td></td></tr>",
+					spam: "<tr><td></td></tr>"
+				},
+				{
+					nombrePaquete: "Business",
+					precio: 29,
+					espacioDisco: "1GB",
+					trafico: "1GB",
+					subdominios: 10,
+					emails: 25,
+					soporteMail: "Webmail Support",
+					soporteBd: "MySQL Support",
+					soportePhp: "PHP5 Support",
+					plesk: "Plesk Control Panel",
+					spam: "<tr><td></td></tr>"
+				},
+				{
+					nombrePaquete: "Platinum",
+					precio: 59,
+					espacioDisco: "5GB",
+					trafico: "Unlimited",
+					subdominios: "Unlimited",
+					emails: "Unlimited",
+					soporteMail: "Webmail Support",
+					soporteBd: "MySQL Support",
+					soportePhp: "PHP5 Support",
+					plesk: "Plesk Control Panel",
+					spam: "Spam Assasin"
+				}
+			]
+		};
+
+		var compiladoHTML = compilar(paquete);
+		document.getElementById("action").innerHTML += compiladoHTML;
+	</script>
+</body>
+</html>
