@@ -16,15 +16,15 @@
 
 	<script type="text/x-handlebars-template" id="index">
 	{{#each preciosPaquete}}
-		<div class="col s6 m3">
-			<table>
-				<tr id="gris">
+		<div class="col s6 m3" id="columna">
+			<table class="tablaPrecios">
+				<tr class="gris">
 					<th class="encabezadoBlanco"><h4>{{{nombrePaquete}}}</h4></th>
 				</tr>
-				<tr><td><h5>$ {{{precio}}}</h5> <br> per month</td></tr>
+				<tr><td><div class="botonPrecio"><br>$ {{{precio}}} <br> per month</div></td></tr>
 				<tr><td><a class="waves-effect waves-light btn btn-verde" href="#">Sign Up</a></td></tr>
-				<tr><td>{{{espacioDisco}}}</td></tr>
-				<tr class="celdaGris"><td>{{{trafico}}}</td></tr>
+				<tr><td>{{{espacioDisco}}} Disk Space</td></tr>
+				<tr class="celdaGris"><td>{{{trafico}}} Monthly Traffic</td></tr>
 				<tr><td>{{{subdominios}}} Subdomains</td></tr>
 				<tr class="celdaGris"><td>{{{emails}}} Email Accounts</td></tr>
 				<tr><td>{{{soporteMail}}} </td></tr>
@@ -56,10 +56,7 @@
 					subdominios: 2,
 					emails: 5,
 					soporteMail: "Webmail Support",
-					soporteBd: "MySQL Support",
-					soportePhp: "<tr><td></td></tr>",
-					plesk: "<tr><td></td></tr>",
-					spam: "<tr><td></td></tr>"
+					soporteBd: "MySQL Support"
 				},
 				{
 					nombrePaquete: "Corporate",
@@ -70,9 +67,7 @@
 					emails: 10,
 					soporteMail: "Webmail Support",
 					soporteBd: "MySQL Support",
-					soportePhp: "PHP5 Support",
-					plesk: "<tr><td></td></tr>",
-					spam: "<tr><td></td></tr>"
+					soportePhp: "PHP5 Support"
 				},
 				{
 					nombrePaquete: "Business",
@@ -84,8 +79,7 @@
 					soporteMail: "Webmail Support",
 					soporteBd: "MySQL Support",
 					soportePhp: "PHP5 Support",
-					plesk: "Plesk Control Panel",
-					spam: "<tr><td></td></tr>"
+					plesk: "Plesk Control Panel"
 				},
 				{
 					nombrePaquete: "Platinum",

@@ -2,11 +2,9 @@
 	margin:0;
 	padding: 0;
 }
-#gris{
+.gris{
 	background-color: #424242;
-}
-table{
-	text-align: center;
+	height: 130px;
 }
 .celdaGris{
 	background-color: #ededed;
@@ -16,4 +14,31 @@ table{
 }
 .encabezadoBlanco{
 	color: white;
+}
+#columna{
+	margin:0;
+	padding: 0;
+	margin-top: 10px;
+}
+#columna:hover{
+	margin-top: -5px;
+	background-color: #424242;
+}
+.tablaPrecios{
+	border: .5px solid #c6c6c6; 
+}
+td, th{
+	text-align: center;
+}
+.botonPrecio{
+	border-radius: 50%;
+	width: 130px;
+	height: 130px;
+	border: 10px solid white;
+	background-color: white;
+	box-shadow: inset 0 0 10px grey;
+	position: relative;
+	top: -40px;
+	left: 30%;
+	text-align: center;
 }
